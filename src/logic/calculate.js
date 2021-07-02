@@ -32,7 +32,7 @@ export default function calculate(calculator, buttonName) {
   }
 
   if (['+', '-', '÷', '%', 'X'].includes(buttonName)) {
-    total = operate(parseFloat(total), parseFloat(next), operation);
+    total = operate(total, next, operation);
   }
   return { total, next, operation };
 }
