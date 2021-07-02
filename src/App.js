@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import PropTypes from 'prop-types';
+import Big from 'big.js';
 
-function App() {
+function App(props) {
+  const { num } = props;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>
+        This is the number:
+        {num}
+      </p>
+      <p>
+        And this is Big object:
+        {new Big(123.4567).toPrecision(5)}
+      </p>
     </div>
   );
 }
+
+App.defaultProps = {
+  num: 100,
+};
+
+App.propTypes = {
+  num: PropTypes.number,
+};
 
 export default App;
