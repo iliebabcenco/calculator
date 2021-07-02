@@ -6,7 +6,7 @@ import ButtonPanel from './ButtonPanel';
 function App() {
   return (
     <>
-      <Display result="15" />
+      <Display result={100} />
       <ButtonPanel />
     </>
   );
