@@ -9,7 +9,6 @@ export default function operate(numberOne, numberTwo, operation) {
     return new Big(numberOne).div(new Big(numberTwo));
   } if (operation === '*') {
     return new Big(numberOne).times(new Big(numberTwo));
-  } else {
-    return (new Big(numberOne).times(new Big(numberTwo))).div(100);
   }
+  return (new Big(numberOne).times(new Big(numberTwo))).div(100);
 }

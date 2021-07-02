@@ -1,4 +1,4 @@
-import operate from "./operate";
+import operate from './operate';
 
 export default function calculate(calculator, buttonName) {
   let { total, next, operation } = calculator;
@@ -11,10 +11,7 @@ export default function calculate(calculator, buttonName) {
     next = null;
     operation = null;
   }
-  if (buttonName === '%') {
-    total /= 100;
-    next /= 100;
-  }
+
   if (['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(buttonName)) {
     if (total === '0') {
       total = buttonName;
@@ -35,8 +32,7 @@ export default function calculate(calculator, buttonName) {
   }
 
   if (['+', '-', '÷', '%', 'X'].includes(buttonName)) {
-    total = () => operate(total, next, operation)
+    total = operate(parseFloat(total), parseFloat(next), operation);
   }
-
   return { total, next, operation };
 }
