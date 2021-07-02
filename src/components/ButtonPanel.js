@@ -4,26 +4,35 @@ import Button from './Button';
 function ButtonPanel() {
   return (
     <div className="button-panel">
-      <>
-        <Button content={1} />
-        <Button content={2} />
-        <Button content={3} />
-        <Button content="<-" />
-        <Button content={4} />
-        <Button content={5} />
-        <Button content={6} />
-        <Button content="C" />
-        <Button content={7} />
-        <Button content={8} />
-        <Button content={9} />
-        <Button content={0} />
-        <Button content="+" />
-        <Button content="-" />
-        <Button content="*" />
-        <Button content="/" />
-        <Button content="(" />
-        <Button content=")" />
-      </>
+      <div className="first-group">
+        <Button name="AC" />
+        <Button name="+/-" />
+        <Button name="%" />
+        <Button name="÷" />
+      </div>
+      <div className="second-group">
+        <Button name="7" />
+        <Button name="8" />
+        <Button name="9" />
+        <Button name="X" />
+      </div>
+      <div className="third-group">
+        <Button name="4" />
+        <Button name="5" />
+        <Button name="6" />
+        <Button name="-" />
+      </div>
+      <div className="fourth-group">
+        <Button name="1" />
+        <Button name="2" />
+        <Button name="3" />
+        <Button name="+" />
+      </div>
+      <div className="fifth-group">
+        <Button name="0" />
+        <Button name="." />
+        <Button name="=" />
+      </div>
     </div>
   );
 }

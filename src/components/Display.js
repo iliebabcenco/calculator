@@ -6,11 +6,18 @@ function Display(props) {
   return (
     <div className="calc-display">
       {' '}
-      <h3>{result}</h3>
+      <h3>
+        Result:
+        {result}
+      </h3>
       {' '}
     </div>
   );
 }
+
+Display.defaultProp = {
+  result: '0',
+};
 
 Display.propTypes = {
   result: PropTypes.string.isRequired,
