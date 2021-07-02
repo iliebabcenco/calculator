@@ -6,13 +6,13 @@ import calculate from '../logic/calculate';
 
 function App() {
   const calculator = {
-    total: '1000',
-    next: '34',
-    operation: 'X',
+    total: '0',
+    next: '0',
+    operation: '',
   };
   return (
     <>
-      <Display result={calculate(calculator, '-').total.toString()} />
+      <Display result={calculate(calculator, '').total.toString()} />
       <ButtonPanel />
     </>
   );

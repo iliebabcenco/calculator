@@ -5,12 +5,10 @@ function Display(props) {
   const { result } = props;
   return (
     <div className="calc-display">
-      {' '}
       <h3>
         Result:
         {result}
       </h3>
-      {' '}
     </div>
   );
 }
