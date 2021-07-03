@@ -3,10 +3,13 @@ import operate from './operate';
 export default function calculate(calculator, buttonName) {
   let { total, next, operation } = calculator;
   if (buttonName === '+/-') {
-    total *= (-1);
-    total = total.toString();
-    next *= (-1);
-    next = next.toString();
+    if (next && next !== 0) {
+      next *= (-1);
+      next = next.toString();
+    } else {
+      total *= (-1);
+      total = total.toString();
+    }
   }
   if (buttonName === 'AC' || (total === null && next === null)) {
     total = null;
@@ -15,11 +18,11 @@ export default function calculate(calculator, buttonName) {
   }
 
   if (['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(buttonName)) {
-    if (total === '0' || !total) {
+    if (!total) {
       total = buttonName;
     } else if (total && !operation) {
       total += buttonName;
-    } else if (next === '0' || !next) {
+    } else if (!next) {
       next = buttonName;
     } else if (operation && total) {
       next += buttonName;

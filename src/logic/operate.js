@@ -8,7 +8,7 @@ export default function operate(numberOne, numberTwo, operation) {
   } if (operation === '-') {
     return num1.minus(num2);
   } if (operation === '÷') {
-    return num1.div(num2);
+    return num2 === '0' ? num1.div(num2) : '0';
   } if (operation === 'X') {
     return num1.times(num2);
   } if (operation === '%') {
