@@ -8,11 +8,11 @@ export default function operate(numberOne, numberTwo, operation) {
   } if (operation === '-') {
     return num1.minus(num2);
   } if (operation === '÷') {
-    return num2 === '0' ? num1.div(num2) : '0';
+    return num2 === '0' ? '0' : num1.div(num2);
   } if (operation === 'X') {
     return num1.times(num2);
   } if (operation === '%') {
-    return (num1.times(num2)).div(100);
+    return numberTwo === null || numberTwo === '0' ? '0' : (num1.times(num2)).div(100);
   }
   return num1;
 }

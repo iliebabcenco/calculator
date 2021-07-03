@@ -37,7 +37,15 @@ export default function calculate(calculator, buttonName) {
     }
   }
 
-  if (['+', '-', '÷', '%', 'X', '='].includes(buttonName)) {
+  if (buttonName === '%' && (next === null || next === '0')) {
+    total = '0';
+  } else if (buttonName === '%' && (operation === '+' || operation === '-')) {
+    next = (total * next) / 100;
+  } else if (buttonName === '%' && (operation === 'X' || operation === '÷')) {
+    next /= total;
+  }
+
+  if (['+', '-', '÷', 'X', '='].includes(buttonName)) {
     if (!total) total = '0';
     if (total && !next) {
       operation = buttonName;
