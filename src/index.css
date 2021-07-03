@@ -25,3 +25,14 @@ code {
     'Courier New',
     monospace;
 }
+
+#root {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.button {
+  padding: 1rem;
+  width: 5rem;
+  font-size: 2rem;
+}

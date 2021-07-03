@@ -23,12 +23,17 @@ class App extends React.Component {
   }
 
   render() {
-    const { total } = this.state;
-
-    console.log(total);
+    const { total, next } = this.state;
+    let show = total;
+    if (next) {
+      show = next;
+    }
+    if (show === null) {
+      show = '0';
+    }
     return (
       <>
-        <Display result={total} />
+        <Display result={show.toString()} />
         <ButtonPanel clickHandler={this.handleClick} />
       </>
     );

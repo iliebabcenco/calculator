@@ -5,8 +5,7 @@ function Display(props) {
   const { result } = props;
   return (
     <div className="calc-display">
-      <h3>
-        Result:
+      <h3 className="calc-display-h3">
         {result}
       </h3>
     </div>

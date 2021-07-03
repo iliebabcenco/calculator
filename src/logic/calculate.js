@@ -15,11 +15,13 @@ export default function calculate(calculator, buttonName) {
   }
 
   if (['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(buttonName)) {
-    if (!total) {
+    if (total === '0' || !total) {
       total = buttonName;
-    } else if (!next) {
+    } else if (total && !operation) {
       total += buttonName;
-    } else {
+    } else if (next === '0' || !next) {
+      next = buttonName;
+    } else if (operation && total) {
       next += buttonName;
     }
   }
@@ -32,8 +34,29 @@ export default function calculate(calculator, buttonName) {
     }
   }
 
-  if (['+', '-', '÷', '%', 'X'].includes(buttonName)) {
-    total = operate(total, next, operation);
+  if (['+', '-', '÷', '%', 'X', '='].includes(buttonName)) {
+    if (!total) total = '0';
+    if (total && !next) {
+      operation = buttonName;
+    }
+    if (total && next && operation) {
+      total = operate(total, next, operation).toString();
+
+      operation = buttonName;
+    }
+  }
+
+  if (buttonName === '=') {
+    if (total && !next) {
+      return total;
+    }
+    if (!total && !next) {
+      total = '0';
+    }
+    if (total && next && operation) {
+      total = operate(total, next, operation).toString();
+      next = null;
+    }
   }
   return { total, next, operation };
 }
