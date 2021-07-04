@@ -52,15 +52,12 @@ export default function calculate(calculator, buttonName) {
     }
     if (total && next && operation) {
       total = operate(total, next, operation).toString();
-
+      next = null;
       operation = buttonName;
     }
   }
 
   if (buttonName === '=') {
-    if (total && !next) {
-      return total;
-    }
     if (!total && !next) {
       total = '0';
     }
