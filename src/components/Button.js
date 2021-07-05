@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/Button.css';
 
 function Button(props) {
   const { name } = props;
@@ -8,7 +9,7 @@ function Button(props) {
   return (
 
     <button
-      className="button"
+      className={name === '0' ? 'button zero-button' : 'button'}
       type="button"
       onClick={() => handleClick(name)}
     >

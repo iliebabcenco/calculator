@@ -1,0 +1,15 @@
+.calc-display {
+    display: flex;
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    flex-flow: row-reverse;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.calc-display-h3 {
+    text-align: right;
+    font-size: 2rem;
+}

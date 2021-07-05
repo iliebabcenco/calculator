@@ -1,5 +1,15 @@
-body {
+html {
+  padding: 0;
   margin: 0;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -24,15 +34,4 @@ code {
     Consolas,
     'Courier New',
     monospace;
-}
-
-#root {
-  text-align: center;
-  margin: 0 auto;
-}
-
-.button {
-  padding: 1rem;
-  width: 5rem;
-  font-size: 2rem;
 }

@@ -1,0 +1,10 @@
+.button {
+    padding: 1rem;
+    width: 25%;
+    height: 100%;
+    font-size: 2rem;
+}
+
+.zero-button {
+    width: 50%;
+}

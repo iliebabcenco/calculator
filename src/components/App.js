@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../App.css';
+import '../styles/App.css';
 import PropTypes from 'prop-types';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
