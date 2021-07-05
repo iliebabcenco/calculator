@@ -1,43 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
+import PropTypes from 'prop-types';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import calculate from '../logic/calculate';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: null,
-      next: null,
-      operation: null,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
+const App = ({ calculator: initialCalculator }) => {
+  const [calculator, setCalculator] = useState(initialCalculator);
 
-  handleClick(buttonName) {
-    const calculator = calculate(this.state, buttonName);
-    this.setState(
-      calculator,
-    );
+  const handleClick = (buttonName) => {
+    setCalculator(calculate(calculator, buttonName));
+  };
+  let show = calculator.total;
+  if (calculator.next) {
+    show = calculator.next;
   }
+  if (show === null) {
+    show = '0';
+  }
+  return (
+    <>
+      <Display result={show.toString()} />
+      <ButtonPanel clickHandler={handleClick} />
+    </>
+  );
+};
 
-  render() {
-    const { total, next } = this.state;
-    let show = total;
-    if (next) {
-      show = next;
-    }
-    if (show === null) {
-      show = '0';
-    }
-    return (
-      <>
-        <Display result={show.toString()} />
-        <ButtonPanel clickHandler={this.handleClick} />
-      </>
-    );
-  }
-}
+App.defaultProps = {
+  calculator: { total: null, next: null, operation: null },
+};
+
+App.propTypes = {
+  calculator: PropTypes.shape({
+    total: PropTypes.string,
+    next: PropTypes.string,
+    operation: PropTypes.string,
+  }),
+};
 
 export default App;
