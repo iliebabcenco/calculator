@@ -38,11 +38,11 @@ export default function calculate(calculator, buttonName) {
   }
 
   if (buttonName === '%' && (next === null || next === '0')) {
-    total = '0';
+    total /= 100;
   } else if (buttonName === '%' && (operation === '+' || operation === '-')) {
     next = (total * next) / 100;
   } else if (buttonName === '%' && (operation === 'X' || operation === '÷')) {
-    next /= total;
+    next /= 100;
   }
 
   if (['+', '-', '÷', 'X', '='].includes(buttonName)) {
@@ -52,15 +52,12 @@ export default function calculate(calculator, buttonName) {
     }
     if (total && next && operation) {
       total = operate(total, next, operation).toString();
-
+      next = null;
       operation = buttonName;
     }
   }
 
   if (buttonName === '=') {
-    if (total && !next) {
-      return total;
-    }
     if (!total && !next) {
       total = '0';
     }
