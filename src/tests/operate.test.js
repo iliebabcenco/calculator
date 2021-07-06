@@ -13,5 +13,4 @@ describe('test calculation of aritmetic operations', () => {
   it('calculates division', () => {
     expect(operate(30, 6, '÷')).toEqual('5');
   });
-
 });
