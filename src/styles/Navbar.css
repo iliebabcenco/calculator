@@ -1,0 +1,23 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 0;
+  margin-bottom: 5rem;
+  border-bottom: 1px solid gray;
+  background: linear-gradient(135deg, #8363a1 0%, #74a8c3 100%);
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.links-list {
+  display: flex;
+  justify-content: space-around;
+  width: 15rem;
+  align-items: center;
+  font-size: 1.2rem;
+}
