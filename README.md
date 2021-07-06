@@ -21,6 +21,13 @@ It is a calculator built with React.
 - Run `npm install` in your computer terminal to install dependencies (you will need Node.js installed on your machine);
 - Run `npm start`;
 
+## How it looks
+
+
+| ![](src/assets/2.png) | ![](src/assets/1.png) | ![](src/assets/3.png) |
+
+
+
 ### Deployment
 
 This application is deployed on [Heroku](https://master-calc.herokuapp.com/).
