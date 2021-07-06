@@ -1,12 +1,12 @@
 .button {
-    padding: 1rem;
-    width: 25%;
-    height: 100%;
-    font-size: 2rem;
-    color: black;
-    text-align: center;
+  padding: 1rem;
+  width: 25%;
+  height: 100%;
+  font-size: 2rem;
+  color: black;
+  text-align: center;
 }
 
 .zero-button {
-    width: 50%;
+  width: 50%;
 }
