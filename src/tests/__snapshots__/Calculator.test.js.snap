@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly to Calculator page 1`] = `
+exports[`match the snapshot 1`] = `
 <div
   className="calculator-div"
 >
