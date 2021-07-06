@@ -64,7 +64,4 @@ describe('check other operations', () => {
     expect(calculate({ total: '55', next: null, operation: null }, '%').total).toEqual(0.55);
     expect(calculate({ total: '55', next: '-33', operation: '÷' }, '%').next).toEqual(-0.33);
   });
-  it("check '%' from a total", () => {
-    expect(calculate({ total: '110', next: '35', operation: '%' }, '=').total).toEqual('38.5');
-  });
 });
