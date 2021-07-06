@@ -24,7 +24,7 @@ It is a calculator built with React.
 ## How it looks
 
 
-| ![](src/assets/2.png) | ![](src/assets/1.png) | ![](src/assets/3.png) |
+![](src/assets/2.png) ![](src/assets/1.png) ![](src/assets/3.png)
 
 
 
