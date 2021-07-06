@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Home from '../components/Home';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom'
+import Home from '../components/Home';
+import '@testing-library/jest-dom';
 
 it('renders correctly to Home page', () => {
   const tree = renderer

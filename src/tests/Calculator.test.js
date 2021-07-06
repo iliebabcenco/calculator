@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Calculator from '../components/Calculator';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom'
+import Calculator from '../components/Calculator';
+import '@testing-library/jest-dom';
 
 it('match the snapshot', () => {
   const tree = renderer

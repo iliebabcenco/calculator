@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Quote from '../components/Quote';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom'
+import Quote from '../components/Quote';
+import '@testing-library/jest-dom';
 
 it('renders correctly to Quote page', () => {
   const tree = renderer
