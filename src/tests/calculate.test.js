@@ -1,48 +1,48 @@
-import calculate from '../logic/calculate'
+import calculate from '../logic/calculate';
 
-describe("test calculation of aritmetic operations", () => {
-  it("calculates sum", () => {
+describe('test calculation of aritmetic operations', () => {
+  it('calculates sum', () => {
     expect(calculate({ total: '5', next: '6', operation: '+' }, '+').total).toEqual('11');
   });
 
-  it("calculates sum with negative operants", () => {
+  it('calculates sum with negative operants', () => {
     expect(calculate({ total: '5', next: '-6', operation: '+' }, '+').total).toEqual('-1');
   });
 
-  it("calculates incorrect sum", () => {
+  it('calculates incorrect sum', () => {
     expect(calculate({ total: '55', next: '6', operation: '+' }, '+').total).not.toEqual('3');
   });
 
-  it("calculates subtract", () => {
+  it('calculates subtract', () => {
     expect(calculate({ total: '55', next: '6', operation: '-' }, '-').total).toEqual('49');
   });
 
-  it("calculates incorrect subtract", () => {
+  it('calculates incorrect subtract', () => {
     expect(calculate({ total: '55', next: '6', operation: '-' }, '-').total).not.toEqual('3');
   });
 
-  it("calculates multiply", () => {
+  it('calculates multiply', () => {
     expect(calculate({ total: '10', next: '6', operation: 'X' }, 'X').total).toEqual('60');
   });
 
-  it("calculates incorrect multiply", () => {
+  it('calculates incorrect multiply', () => {
     expect(calculate({ total: '55', next: '6', operation: 'X' }, 'X').total).not.toEqual('1');
   });
 
-  it("calculates division", () => {
+  it('calculates division', () => {
     expect(calculate({ total: '55', next: '5', operation: '÷' }, '÷').total).toEqual('11');
   });
 
-  it("calculates incorrect multiply", () => {
+  it('calculates incorrect multiply', () => {
     expect(calculate({ total: '55', next: '6', operation: '÷' }, '÷').total).not.toEqual('1');
   });
 
-  it("calculates equals sign", () => {
+  it('calculates equals sign', () => {
     expect(calculate({ total: '55', next: '5', operation: '÷' }, '=').total).toEqual('11');
   });
 });
 
-describe("check other operations", () => {
+describe('check other operations', () => {
   it("check 'AC' sign", () => {
     expect(calculate({ total: '55', next: '5', operation: '÷' }, 'AC').total).toBeFalsy();
     expect(calculate({ total: '55', next: '5', operation: '÷' }, 'AC').next).toBeFalsy();
